@@ -2,7 +2,7 @@ import specialtyModel from "../models/specialtyMedicalModel.js";
 
 const specialtyController = {};
 
-specialtyController.getSpecialty = async (req, res) => {
+specialtyController.getSpecialties = async (req, res) => {
   try {
     const specilty = await specialtyModel.find;
     return res.status(200).json(specilty);
@@ -12,7 +12,7 @@ specialtyController.getSpecialty = async (req, res) => {
   }
 };
 
-specialtyController.insertMedicalEquipment = async (req, res) => {
+specialtyController.insertSpecialty = async (req, res) => {
   try {
     const { specialtyName, description, isAvaible } = req.body;
     const newSpecialty = new specialtyModel({
@@ -62,3 +62,5 @@ specialtyController.deleteSpecialty = async (req, res) => {
     return res.status(500).json({ message: "Internal error" });
   }
 };
+
+export default specialtyController;

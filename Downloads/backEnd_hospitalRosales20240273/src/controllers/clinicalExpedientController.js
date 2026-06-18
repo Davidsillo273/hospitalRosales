@@ -2,7 +2,7 @@ import clinicalExpedientModel from "../models/clinicalExpedientModel.js";
 
 const clinicalExpedientController = {};
 
-clinicalExpedientController.getMedicalAppointment = async (req, res) => {
+clinicalExpedientController.getClinicalExpedient = async (req, res) => {
   try {
     const clinicalExpedient = await clinicalExpedientModel
       .find()
@@ -69,3 +69,5 @@ clinicalExpedientController.deleteClinicalExpedient = async (req, res) => {
     return res.status(500).json({ message: "Internal error" });
   }
 };
+
+export default clinicalExpedientController;
