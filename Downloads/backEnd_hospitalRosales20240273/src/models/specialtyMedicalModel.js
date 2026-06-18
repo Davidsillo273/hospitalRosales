@@ -1,5 +1,5 @@
 import { Schema, model } from "mongoose";
-const medicalsAppointMentSchema = new Schema(
+const specialtyMedicalSchema = new Schema(
   {
     specialtyName: { type: String },
     description: { type: String },
@@ -11,4 +11,4 @@ const medicalsAppointMentSchema = new Schema(
   },
 );
 
-export default model("medicalsAppointMents", medicalsAppointMentSchema);
+export default model("pecialtyMedicals", specialtyMedicalSchema);

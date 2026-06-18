@@ -6,7 +6,7 @@ const router = express.Router();
 router.route("/").get(patientController.getPatients);
 router
   .route("/:id")
-  .put(upload.single("image"), patientController.updateMedicalAppointment)
-  .delete(patientController.deleteMedicalAppointment);
+  .put(upload.single("image"), patientController.updatePatient)
+  .delete(patientController.deletePatient);
 
 export default router;

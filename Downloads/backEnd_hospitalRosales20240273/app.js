@@ -2,6 +2,11 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
+//Auths
+import loginRoutes from "./src/routes/auth/loginRoutes.js";
+import logoutRoutes from "./src/routes/auth/logoutRoutes.js";
+import registerPatientRoutes from "./src/routes/auth/registerPatientRoutes.js";
+
 import clinicalExpedientRoutes from "./src/routes/clinicalExpedientRoutes.js";
 import medicalAppointmentRoutes from "./src/routes/medicalAppointmentRoutes.js";
 import medicalEquipmentRoutes from "./src/routes/medicalEquipmentRoutes.js";
@@ -19,6 +24,10 @@ app.use(
 
 app.use(cookieParser());
 app.use(express.json());
+
+app.use("/api/login", loginRoutes);
+app.use("/api/logout", logoutRoutes);
+app.use("/api/registerPatient", registerPatientRoutes);
 app.use("/api/clinicalExpedient", clinicalExpedientRoutes);
 app.use("/api/medicalAppointment", medicalAppointmentRoutes);
 app.use("/api/medicalEquipment", medicalEquipmentRoutes);

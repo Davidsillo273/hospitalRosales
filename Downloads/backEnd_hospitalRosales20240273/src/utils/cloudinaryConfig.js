@@ -5,8 +5,8 @@ import { config } from "../../config.js";
 
 cloudinary.config({
   cloud_name: config.cloudinary.cloudinary_name,
-  api_key: config.cloudinary.cloudinary_api_key,
   api_secret: config.cloudinary.cloudinary_api_secret,
+  api_key: config.cloudinary.cloudinary_api_key,
 });
 
 const storage = new CloudinaryStorage({
