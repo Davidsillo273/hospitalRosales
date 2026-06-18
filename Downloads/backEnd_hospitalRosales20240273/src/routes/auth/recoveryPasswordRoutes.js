@@ -3,8 +3,8 @@ import recoveryPasswordController from "../../controllers/auth/recoveryPasswordC
 
 const router = express.Router();
 
-router.route("requestCode").post(recoveryPasswordController.requestCode);
-router.route("verifyCode").post(recoveryPasswordController.verifyCode);
-router.route("newPassword").post(recoveryPasswordController.newPassword);
+router.route("/requestCode").post(recoveryPasswordController.requestCode);
+router.route("/verifyCode").post(recoveryPasswordController.verifyCode);
+router.route("/newPassword").post(recoveryPasswordController.newPassword);
 
 export default router;

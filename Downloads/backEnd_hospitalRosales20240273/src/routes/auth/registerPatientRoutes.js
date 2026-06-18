@@ -3,6 +3,6 @@ import registerPatientController from "../../controllers/auth/registerPatientCon
 
 const router = express.Router();
 
-router.route("register").post(registerPatientController.register);
-router.route("verifyCode").post(registerPatientController.verifyCode);
+router.route("/register").post(registerPatientController.register);
+router.route("/verifyCode").post(registerPatientController.verifyCode);
 export default router;

@@ -4,7 +4,7 @@ const patientController = {};
 
 patientController.getPatients = async (req, res) => {
   try {
-    const patient = await patientModel.find;
+    const patient = await patientModel.find();
     return res.status(200).json(patient);
   } catch (error) {
     console.log("error" + error);
@@ -46,7 +46,7 @@ patientController.updatePatient = async (req, res) => {
       updatePatient.profilePhoto = req.file.path;
       updatePatient.public_id = req.file.filename;
     }
-    await patientFound.findBydIdAndUpdate(req.params.id, updatedPatient, {
+    await patientFound.findByIdAndUpdate(req.params.id, updatedPatient, {
       new: true,
     });
     return res.status(200).json({ message: "Updated" });
@@ -58,7 +58,7 @@ patientController.updatePatient = async (req, res) => {
 
 patientController.deletePatient = async (req, res) => {
   try {
-    const deleted = await patientModel.findBydIdAndDelete(req.params.id);
+    const deleted = await patientModel.findByIdAndDelete(req.params.id);
     if (!deleted) {
       return res.status(404).json({ message: "Not found" });
     }

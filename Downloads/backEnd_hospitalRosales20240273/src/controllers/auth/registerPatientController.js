@@ -4,7 +4,7 @@ import jsonwebtoken from "jsonwebtoken";
 import bcryptjs from "bcryptjs";
 
 import patientModel from "../../models/patientModel.js";
-
+import HTMLRecoveryEmail from "../../utils/sendMailRecovery.js";
 import { config } from "../../../config.js";
 
 const registerPatientController = {};

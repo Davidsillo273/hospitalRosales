@@ -52,7 +52,7 @@ medicalAppointmentController.updateMedicalAppointment = async (req, res) => {
       status,
       obsertations,
     } = req.body;
-    const updated = await medicalAppointmentModel.findBydIdAndUpdate(
+    const updated = await medicalAppointmentModel.findByIdAndUpdate(
       req.params.id,
       {
         patient_id,
@@ -76,7 +76,7 @@ medicalAppointmentController.updateMedicalAppointment = async (req, res) => {
 
 medicalAppointmentController.deleteMedicalAppointment = async (req, res) => {
   try {
-    const deleted = await medicalAppointmentModel.findBydIdAndDelete(
+    const deleted = await medicalAppointmentModel.findByIdAndDelete(
       req.params.id,
     );
     if (!deleted) {

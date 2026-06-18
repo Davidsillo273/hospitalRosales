@@ -4,7 +4,7 @@ const specialtyController = {};
 
 specialtyController.getSpecialties = async (req, res) => {
   try {
-    const specilty = await specialtyModel.find;
+    const specilty = await specialtyModel.find();
     return res.status(200).json(specilty);
   } catch (error) {
     console.log("error" + error);
@@ -31,7 +31,7 @@ specialtyController.insertSpecialty = async (req, res) => {
 specialtyController.updateSpecialty = async (req, res) => {
   try {
     const { specialtyName, description, isAvaible } = req.body;
-    const updated = await specialtyModel.findBydIdAndUpdate(
+    const updated = await specialtyModel.findByIdAndUpdate(
       req.params.id,
       {
         specialtyName,
@@ -52,7 +52,7 @@ specialtyController.updateSpecialty = async (req, res) => {
 
 specialtyController.deleteSpecialty = async (req, res) => {
   try {
-    const deleted = await specialtyModel.findBydIdAndDelete(req.params.id);
+    const deleted = await specialtyModel.findByIdAndDelete(req.params.id);
     if (!deleted) {
       return res.status(404).json({ message: "Not found" });
     }

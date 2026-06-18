@@ -4,7 +4,7 @@ const medicalEquipmentController = {};
 
 medicalEquipmentController.getMedicalEquipments = async (req, res) => {
   try {
-    const medicalEquipment = await medicalEquipmentModel.find;
+    const medicalEquipment = await medicalEquipmentModel.find();
     return res.status(200).json(medicalEquipment);
   } catch (error) {
     console.log("error" + error);
@@ -82,7 +82,7 @@ medicalEquipmentController.updateMedicalEquipment = async (req, res) => {
       updateMedicalEquipment.image = req.file.path;
       updateMedicalEquipment.public_id = req.file.filename;
     }
-    await medicalEquipmentFound.findBydIdAndUpdate(
+    await medicalEquipmentFound.findByIdAndUpdate(
       req.params.id,
       updatedMedicalEquipment,
       {
@@ -98,7 +98,7 @@ medicalEquipmentController.updateMedicalEquipment = async (req, res) => {
 
 medicalEquipmentController.deleteMedicalEquipment = async (req, res) => {
   try {
-    const deleted = await medicalEquipmentModel.findBydIdAndDelete(
+    const deleted = await medicalEquipmentModel.findByIdAndDelete(
       req.params.id,
     );
     if (!deleted) {

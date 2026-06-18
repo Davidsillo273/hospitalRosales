@@ -3,7 +3,7 @@ const specialtyMedicalSchema = new Schema(
   {
     specialtyName: { type: String },
     description: { type: String },
-    isAvaible: { Boolean },
+    isAvaible: { type: Boolean },
   },
   {
     timestamps: true,

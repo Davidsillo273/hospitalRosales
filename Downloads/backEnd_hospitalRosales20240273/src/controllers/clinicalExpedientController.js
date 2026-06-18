@@ -35,7 +35,7 @@ clinicalExpedientController.insertClinicalExpedient = async (req, res) => {
 clinicalExpedientController.updateClinicalExpedient = async (req, res) => {
   try {
     const { patient_id, diagnosis, medications, medicalNotes } = req.body;
-    const updated = await clinicalExpedientModel.findBydIdAndUpdate(
+    const updated = await clinicalExpedientModel.findByIdAndUpdate(
       req.params.id,
       {
         patient_id,
@@ -57,7 +57,7 @@ clinicalExpedientController.updateClinicalExpedient = async (req, res) => {
 
 clinicalExpedientController.deleteClinicalExpedient = async (req, res) => {
   try {
-    const deleted = await clinicalExpedientModel.findBydIdAndDelete(
+    const deleted = await clinicalExpedientModel.findByIdAndDelete(
       req.params.id,
     );
     if (!deleted) {
