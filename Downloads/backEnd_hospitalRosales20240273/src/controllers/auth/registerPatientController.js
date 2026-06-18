@@ -68,10 +68,7 @@ registerPatientController.register = async (req, res) => {
       from: config.email.user_email,
       to: email,
       subject: "Account verify",
-      text:
-        "Para verificar tu cuenta, utiliza este código" +
-        verificationCode +
-        "expira en 15 minutos",
+      html: HTMLRecoveryEmail(code),
     };
 
     transporter.sendMail(mailOptions, (error, info) => {
